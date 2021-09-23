@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @CrossOrigin(origins = "*")
 @Api(value = "API REST Aluno")
-@RequestMapping(value="aluno")
+@RequestMapping(value="cliente")
 public class ClienteResource {
 	
 	@Autowired
@@ -30,33 +30,45 @@ public class ClienteResource {
 	
 
 	@GetMapping
-	@ApiOperation(value ="Busca todos os alunos.")
+	@ApiOperation(value ="Busca todos os clientes.")
 	public List<Cliente> buscarTodos() {
 		return this.service.buscarTodos();
 	}
 
+	@GetMapping("buscarNome/{nome}")
+	@ApiOperation(value ="Busca clientes por nome.")
+	public List<Cliente> buscarClientesPorNome(@PathVariable String nome) {
+		return this.service.recuperarClientePorNome(nome);
+	}
+
+	@GetMapping("buscarCpf/{cpf}")
+	@ApiOperation(value ="Busca cliente por cpf.")
+	public Cliente buscarClientesPorCpf(@PathVariable String cpf) {
+		return this.service.recuperarClientePorCpf(cpf);
+	}
+
 	@GetMapping("/{id}")
-	@ApiOperation(value ="Busca um aluno por id.")
+	@ApiOperation(value ="Busca um cliente por id.")
 	public Cliente buscarPorId(@PathVariable Long id) {
 		return this.service.buscarPorId(id);
 	}
 
 	@PostMapping
-	@ApiOperation(value ="Salva um aluno.")
-	public Cliente salvar(@RequestBody Cliente aluno) {
-		return this.service.salvar(aluno);
+	@ApiOperation(value ="Salva um cliente.")
+	public Cliente salvar(@RequestBody Cliente cliente) {
+		return this.service.salvar(cliente);
 		
 	}
 
 	@PutMapping("/{id}")
-	@ApiOperation(value ="Atualiza os dados de um aluno.")
-	public Cliente atualizar(@PathVariable Long id, @RequestBody Cliente aluno) {
-		return this.service.atualizar(id, aluno);
+	@ApiOperation(value ="Atualiza os dados de um cliente.")
+	public Cliente atualizar(@PathVariable Long id, @RequestBody Cliente cliente) {
+		return this.service.atualizar(id, cliente);
 		
 	}
 
 	@DeleteMapping("/{id}")
-	@ApiOperation(value ="Exclui um aluno.")
+	@ApiOperation(value ="Exclui um cliente.")
 	public void excluir(@PathVariable Long id) {
 		 this.service.excluir(id);
 	}

@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.projeto.utils.DateLIB;
+
 @Entity
 @Table(name = "cliente")
 public class Cliente extends AbstractEntity implements Serializable {
@@ -31,7 +33,9 @@ public class Cliente extends AbstractEntity implements Serializable {
 
 	@Column(name = "nascimento", nullable = false)
 	private Date dataNascimento;
-
+	
+	@SuppressWarnings("unused")
+	private Integer idade = 0;
 
 	public Long getId() {
 		return id;
@@ -65,5 +69,13 @@ public class Cliente extends AbstractEntity implements Serializable {
 		this.dataNascimento = dataNascimento;
 	}
 
+	public Integer getIdade() {
+		if(this.getDataNascimento() != null) {
+			Date dataAtual = new Date();
+			return DateLIB.diffYears(this.getDataNascimento(), dataAtual);
+			
+		}
+		return 0;
+	}
 
 }

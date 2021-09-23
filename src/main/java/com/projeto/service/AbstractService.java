@@ -16,7 +16,7 @@ public abstract class AbstractService<T extends AbstractEntity> {
 
 	public T buscarPorId(Long id) {
 		if (id == null) {
-			throw new ResponseException("Falta ao tentar recuperar por id: Id nulo.");
+			throw new ResponseException("Id não informado.");
 		}
 
 		Optional<T> entity = this.repo.findById(id);
@@ -34,7 +34,7 @@ public abstract class AbstractService<T extends AbstractEntity> {
 
 	public T salvar(T entity) {
 		if (entity == null) {
-			throw new ResponseException("Falha ao tentar salvar: Associado nula.");
+			throw new ResponseException("Objeto não informado.");
 		}
 
 		if (entity.getId() == null) {
@@ -53,7 +53,7 @@ public abstract class AbstractService<T extends AbstractEntity> {
 		T entityRec = this.buscarPorId(id);
 
 		if (entityRec == null) {
-			throw new ResponseException("Falta ao tentar atualizar: Id não encontrada.");
+			throw new ResponseException("Id não encontrado.");
 		}
 
 		entityRec = entity;

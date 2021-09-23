@@ -27,9 +27,19 @@ public class RabbitMqConnection {
 	@Value("${rabbit.password}")
 	private String password;
 
+	@Value("${spring.profiles.active}")
+	private String env;
+	
+	public RabbitMqConnection(AmqpAdmin adminAmqp) {
+		this.adminAmqp = adminAmqp;
+	}
+	
 	public CachingConnectionFactory getConnection() {
 		if (this.connectionFactory == null) {
-			this.connectionFactory = new CachingConnectionFactory(this.host);
+			if(this.host != null) {
+				this.connectionFactory = new CachingConnectionFactory(this.host);
+			}
+			
 			this.connectionFactory.setUsername(this.user);
 			this.connectionFactory.setPassword(this.password);
 			this.connectionFactory.setVirtualHost(this.user);
@@ -73,7 +83,11 @@ public class RabbitMqConnection {
 	
 	@PostConstruct
 	private void adicionarFilas() {
-		this.conectarRabbitMQ();
+		//no ambiente de desenvolvimento os dados da connexao são carregados direto no construtor 
+		if(!this.env.equals("dev")) {
+			this.conectarRabbitMQ();
+		}
+		
 		this.adicionarFila(FILA_RESULTADO_SESSAO);
 	}
 
