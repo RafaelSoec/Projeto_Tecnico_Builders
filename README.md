@@ -1,6 +1,8 @@
 # Desafio Técnico
 
-O projeto possui o arquivo postman para testar os serviços disponibilizados pela API. Além disso, dentro do projeto existe um arquivo chamado docker-compose.yml que representa um orquestrador responsável por subir os containers necessários para rodar a aplicação localmente. Dentro do orquestrador existem os containers relativos ao banco de dados e ao serviço de mensageria.
+O projeto possui o arquivo postman "Builders.postman_collection.json" para testar os serviços disponibilizados pela API. 
+
+Além disso, dentro do projeto existe um arquivo chamado docker-compose.yml que representa um orquestrador responsável por subir os containers necessários para rodar a aplicação localmente. Dentro do orquestrador existem os containers relativos ao banco de dados e ao serviço de mensageria.
 
 Para executar o orquestrador:
 
@@ -42,25 +44,25 @@ Desenvolver uma REST API que:
 
 ## Critérios
 
-Utilização de boas práticas de código;
+* Utilização de boas práticas de código;
 
-Utilização de padrões de projeto;
+* Utilização de padrões de projeto;
 
-Cobertura de testes (Unitários, Integrados e/ou de comportamento);
+* Cobertura de testes (Unitários, Integrados e/ou de comportamento);
 
-Design de API REST.
+* Design de API REST.
 
 
 
 ### Tarefas bônus
 
-Empacote sua aplicação com Docker;
+* Empacote sua aplicação com Docker;
 
-Forneça outros itens de infraestrutura em containers (Banco de Dados, Cache, etc);
+* Forneça outros itens de infraestrutura em containers (Banco de Dados, Cache, etc);
 
-Utilize um orquestrador de container (Ex. Docker Compose);
+* Utilize um orquestrador de container (Ex. Docker Compose);
 
-Hospede o projeto em algum provedor cloud e forneça por email a URL para acesso.
+* Hospede o projeto em algum provedor cloud e forneça por email a URL para acesso.
 
 
 ## Notas
