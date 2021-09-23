@@ -5,7 +5,7 @@ O projeto possui o arquivo postman para testar os serviços disponibilizados pel
 Para executar o orquestrador:
 
   * Instale o docker;
-  * Na raiz do projeto use o comando: docker-compose up para instalar as imagens do postgres e do rabbitMq.
+  * Na raiz do projeto, use o comando: docker-compose up para instalar as imagens do postgres e do rabbitMq.
 
 Links:
   * Servidor: https://projeto-tecnico-south-system.herokuapp.com/
