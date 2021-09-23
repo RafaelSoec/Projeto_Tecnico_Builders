@@ -1,8 +1,15 @@
 # Desafio Técnico
 
+O projeto possui o arquivo postman para testar os serviços disponibilizados pela API. Além disso, dentro do projeto existe um arquivo chamado docker-compose.yml que representa um orquestrador responsável por subir os containers necessários para rodar a aplicação localmente. Dentro do orquestrador existem os containers relativos ao banco de dados e ao serviço de mensageria.
+
+Para executar o orquestrador:
+
+  * Instale o docker;
+  * Na raiz do projeto use o comando: docker-compose up para instalar as imagens do postgres e do rabbitMq.
+
 Links:
   * Servidor: https://projeto-tecnico-south-system.herokuapp.com/
-  * Swagger: https://projeto-tecnico-south-system.herokuapp.com/swagger-ui.html#/
+  * Swagger: https://projeto-tecnico-south-system.herokuapp.com/swagger-ui.html#
 
 Tecnologias utilizadas:
 
@@ -12,7 +19,8 @@ Tecnologias utilizadas:
   * PostgresSql - banco de dados
   * Swagger - Documentação de API
   * Git  - Versionamento utilizando gitflow
-  * JUNIT - Testes unitários
+  * JUNIT/Mockito - Testes unitários
+  * Docker - Containers
   * log4j - Logs
 
 ## Objetivo
@@ -43,6 +51,7 @@ Cobertura de testes (Unitários, Integrados e/ou de comportamento);
 Design de API REST.
 
 
+
 ### Tarefas bônus
 
 Empacote sua aplicação com Docker;
@@ -52,4 +61,10 @@ Forneça outros itens de infraestrutura em containers (Banco de Dados, Cache, et
 Utilize um orquestrador de container (Ex. Docker Compose);
 
 Hospede o projeto em algum provedor cloud e forneça por email a URL para acesso.
+
+
+## Notas
+
+A arquitetura da aplicação foi definida como uma arquitetura em três camadas: Resource, Repository e Service. Dessa forma, cada camada possui sua responsabilidade.
+No desenvolvimento de cada camada foram usados os princípios da orientação a objetos definidos pelo SOLID. Todas as classes prezam pela responsabilidade unica. Para cada serviço foi criado um cenário de teste com JUNIT.
 
