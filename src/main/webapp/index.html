@@ -5,69 +5,67 @@
     <title>Desafio Builders</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" type="image/x-icon" href="builders.png">
   </head>
   <body>
+	<script>
+		// On mouse-over, execute myFunction
+		function redirectLink() {
+			window.open(location.href + "/swagger-ui.html#");
+		}
+	</script>
+	
+	
   <div>
-  A Builders pediu para você construir um MVP de um cadastro de clientes: é necessário que seja possível criar, editar, listar e atualizar os dados por completo e também de forma granular.
+ 	<div >
+		<h1 style="text-align: center">Desafio Técnico</h1>
+		 <p>A Builders pediu para você construir um MVP de um cadastro de clientes: é necessário que seja possível criar, editar,
+		  	listar e atualizar os dados por completo  e também de forma granular.
+		 </p> 
+		<!-- <img width="300" alt="Angular Logo" src="/imgs/logoDesafio.jpeg"> -->
+	</div>
 
+	<div>
+		<h3>Links:</h3>
+		<ul>
+			<li><a target="_blank" rel="noopener"
+				href="https://www.linkedin.com/in/rafael-souza-9a315116a/">Linkedin</a>
+			</li>
+			<li><a  href="javascript:;" rel="noopener" onclick="redirectLink()">Swagger</a>
+			</li>
+			<li><a target="_blank" rel="noopener"
+				href="https://github.com/RafaelSoec/Projeto_Tecnico_Builders">Github</a></li>
+		</ul>
+	</div>
 
+	<div>
+		<h3>Tecnologias utilizadas:</h3>
+		<ul>
+			<li>Java e SpringBoot</li>
+			<li>Mensageria - RabbitMQ</li>
+			<li>Heroku - Servidor em cloud</li>
+			<li>PostgresSql - banco de dados</li>
+			<li>Swagger - Documentação de API</li>
+			<li>Git - Versionamento utilizando gitflow</li>
+			<li>JUNIT/Mockito - Testes unitários</li>
+			<li>Docker - Containers</li>
+			<li>log4j - Logs</li>
+		</ul>
+	</div>
 
-Requisitos:
+	<div>
+		<h3>Requisitos:</h3>
+		<p> Desenvolva uma REST API que:</p>
+		<ul>
+			<li>Permita criação de novos clientes;</li>
+			<li>Permita a atualização de clientes existentes;</li>
+			<li>Permita que seja possível listar os clientes de forma paginada;</li>
+			<li>Permita que buscas por atributos cadastrais do cliente;</li>
+		</ul>
+		<p> É necessário também que cada elemento retornado pela api de clientes informe a idade</p>
+		<p>Documente sua API e também disponibilize um arquivo Postman para fácil utilização da API.</p>
+	</div>
 
-
-
-Desenvolva uma REST API que:
-
-
-
-Permita criação de novos clientes;
-
-Permita a atualização de clientes existentes;
-
-Permita que seja possível listar os clientes de forma paginada;
-
-Permita que buscas por atributos cadastrais do cliente;
-
-É necessário também que cada elemento retornado pela api de clientes informe a idade;
-
-Documente sua API e também disponibilize um arquivo Postman para fácil utilização da API.
-
-
-
-Critérios que iremos utilizar para avaliar o seu Desafio Técnico:
-
-
-
-Utilização de boas práticas de código;
-
-Utilização de padrões de projeto;
-
-Cobertura de testes (Unitários, Integrados e/ou de comportamento);
-
-Design de API REST.
-
-
-
-Bônus - Para ir além das expectativas, desenvolva os itens abaixo, conforme sentir necessidade:
-
-
-
-Empacote sua aplicação com Docker;
-
-Forneça outros itens de infraestrutura em containers (Banco de Dados, Cache, etc);
-
-Utilize um orquestrador de container (Ex. Docker Compose);
-
-Hospede o projeto em algum provedor cloud e forneça por email a URL para acesso.
-
-
-
-Notas
-
-
-
-Descreva seu processo criativo para que possamos entender as decisões que foram tomadas no fluxo do desenvolvimento;
-
-Sinta-se livre para ser criativo, não existe solução 100% correta. Estamos interessados em como você lida com problemas propostos</div>
+	</div>
   </body>
   </html>
